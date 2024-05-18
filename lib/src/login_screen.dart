@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Text(
-              'Cupid',
+              'CupidTest',
               style: TextStyle(
                 fontSize: 32.0,
                 fontWeight: FontWeight.bold,
