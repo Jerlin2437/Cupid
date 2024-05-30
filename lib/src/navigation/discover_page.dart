@@ -4,7 +4,7 @@ class DiscoverPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.white,
       appBar: TopBar(),
       // profile card and the choice buttons
       body: Column(
@@ -148,26 +148,26 @@ class CupidButtons extends StatelessWidget{
       children: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.favorite,
             size: 50,
-            color: Colors.white,
+            color: Colors.pink[200],
           ),
         ),
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.send,
             size: 50,
-            color: Colors.white,
+            color: Colors.blue[300],
           ),
         ),
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.highlight_off_outlined,
             size: 50,
-            color: Colors.white,
+            color: Colors.red[500],
           ),
         ),
       ],
