@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
-
 class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.pink[100],
-      appBar: AppBar(
-        toolbarHeight: 50.0,
-        backgroundColor: Colors.white,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/cupid.png', 
-              height: 45.0,
-            ), // any logo we make, just a placeholder for now
-            const Text(
-              'Cupid',
-            ),
-          ],
-        ),
-      ),
+      appBar: DiscoverFriends(),
       // profile card and the choice buttons
       body: Column(
         children: [
@@ -29,29 +13,85 @@ class HomePage extends StatelessWidget{
         ],
       ),
       // nav bar
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0x00f2ecdc),
-        selectedItemColor:  Colors.redAccent,
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Screen 1',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Screen 2',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Screen 3',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Screen 4',
+      bottomNavigationBar: NavBar(),
+    );
+  }
+}
+
+class DiscoverFriends extends StatelessWidget implements PreferredSizeWidget{
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
+  Widget build(BuildContext context) {
+    return AppBar(
+      toolbarHeight: 50.0,
+      backgroundColor: Colors.white,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/cupid.png', 
+                  height: 25.0,
+                ),
+                const Text(
+                  'Cupid',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+          ), // any logo we make, just a placeholder for now
+          Expanded(
+            flex: 7,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text('Discover',),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('Friends',),
+                ),
+              ],
+            ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class NavBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      backgroundColor: const Color(0x00f2ecdc),
+      selectedItemColor:  Colors.redAccent,
+      unselectedItemColor: Colors.grey,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Screen 1',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: 'Screen 2',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications),
+          label: 'Screen 3',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Screen 4',
+        ),
+      ],
     );
   }
 }
@@ -60,9 +100,9 @@ class DiscoverProfile extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+      padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.7,
+        height: MediaQuery.of(context).size.height * 0.65,
         width: MediaQuery.of(context).size.width,
         child: Stack(
           children: [
@@ -70,7 +110,7 @@ class DiscoverProfile extends StatelessWidget{
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/images/catselfie.jpg'),
+                  image: AssetImage('assets/catselfie.jpg'),
                 ),
               ),
             ),
