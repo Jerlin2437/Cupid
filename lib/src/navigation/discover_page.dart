@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-class HomePage extends StatelessWidget{
+
+class DiscoverPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.pink[100],
-      appBar: DiscoverFriends(),
+      appBar: TopBar(),
       // profile card and the choice buttons
       body: Column(
         children: [
@@ -18,18 +19,18 @@ class HomePage extends StatelessWidget{
   }
 }
 
-class DiscoverFriends extends StatelessWidget implements PreferredSizeWidget{
+class TopBar extends StatelessWidget implements PreferredSizeWidget{
   @override
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(35);
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 50.0,
-      backgroundColor: Colors.white,
+      toolbarHeight: 30.0,
+      backgroundColor: Colors.transparent,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Row(
               children: [
                 Image.asset(
@@ -46,17 +47,23 @@ class DiscoverFriends extends StatelessWidget implements PreferredSizeWidget{
             ),
           ), // any logo we make, just a placeholder for now
           Expanded(
-            flex: 7,
+            flex: 6,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Text('Discover',),
+                  child: Text(
+                    'Discover',
+                    style: TextStyle(fontSize: 20),
+                    ),
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Friends',),
+                  child: Text(
+                    'Friends',
+                    style: TextStyle(fontSize: 20),
+                    ),
                 ),
               ],
             ),
