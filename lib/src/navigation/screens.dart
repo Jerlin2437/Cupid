@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
 
 class Screen1 extends StatelessWidget {
   @override
@@ -30,8 +31,8 @@ class Screen3 extends StatelessWidget {
 class Screen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Screen 4'),
+    return Scaffold(
+      body: ProfileScreen(),  // Use ProfileScreen here as part of Screen 4
     );
   }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1002346969932",
+    "project_id": "cupid-b5c7a",
+    "storage_bucket": "cupid-b5c7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002346969932:android:24d756ff52da6d2ad46de9",
+        "android_client_info": {
+          "package_name": "com.example.cupidv1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPu9Rko3v2zwY1q1xpvZAZZvKW_3mctQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
