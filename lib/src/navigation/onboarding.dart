@@ -16,6 +16,7 @@ class Onboarding extends StatelessWidget{
     Tab(text: 'Start'),
     Tab(text: 'Number'),
     Tab(text: 'Verification'),
+    Tab(text: 'Username'),
   ];
 
   @override
@@ -60,6 +61,7 @@ class Onboarding extends StatelessWidget{
             Start(tabController: tabController),
             Number(tabController: tabController),
             Verification(tabController: tabController),
+            Username(tabController: tabController),
           ],
         ),
       );
@@ -108,6 +110,26 @@ class CustomNumberInput extends StatelessWidget{
     );
   }
 }
+
+class CustomTextInput extends StatelessWidget{
+  final String text;
+
+  const CustomTextInput({
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context){
+    return TextField(
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+        hintText: text,
+      ),
+    );
+  }
+}
+
+
 
 class CustomButton extends StatelessWidget{
   final TabController tabController;
@@ -280,6 +302,36 @@ class Verification extends StatelessWidget{
     );
   }
 }
+
+class Username extends StatelessWidget{
+  final TabController tabController;
+
+  const Username({
+    Key? key,
+    required this.tabController,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Column(
+            children: [
+              CustomOnboardingHeader(text: 'What would you like your username to be?'),
+              Text('This will not show up on your profile. It is just for your friends to find you.'),
+              CustomTextInput(text: 'Please enter your username'),
+            ],
+          ),
+          CustomButton(tabController: tabController, text: 'CONTINUE',),
+        ],
+      ),
+    );
+  }
+}
+
 
 /*
 class Verification extends StatelessWidget {
